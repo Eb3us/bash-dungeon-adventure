@@ -1,7 +1,7 @@
 #! /bin/bash
 
 source ./functions/colors.sh
-source ./functions/mirar.sh
+source ./functions/mirar/mirar.sh
 source ./functions/ayuda.sh
 source ./functions/salir.sh
 source ./functions/guardar.sh
@@ -49,7 +49,7 @@ global_cmd() {
   elif [[ $answer == "mirar alrededor" ]]; then
     mirar_alred_comienzo
   elif [[ $answer == "mirar" ]]; then
-    mirar global
+    mirar comienzo
   elif [[ $answer == "guardar" ]]; then
     guardar 
   elif [[ $answer == "salir" ]]; then
