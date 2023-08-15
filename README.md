@@ -1,5 +1,4 @@
-# ACAB 
-## ACAB: Calabozos y Aventura en BASH
+# ACAB: Calabozos y Aventura en BASH
 
 > *He vivido y me he aventurado mucho, y creo que eso es muy sano.
 > Y creo que todo el mundo debería aventurarse en la vida porque
