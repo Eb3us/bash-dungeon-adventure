@@ -7,6 +7,7 @@
 > > Tienes que saber lo que quieres hacer con tu vida.
 > > Y tienes que saber cuando tienes algo especial
 > > y no quieres echarlo a perder.*
+> > 
 > > Joey Ramone
 
 **ACAB** (ACAB: Calabozos y Aventura en BASH) es una aventura de texto
