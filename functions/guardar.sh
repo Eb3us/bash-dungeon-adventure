@@ -4,7 +4,7 @@ echo "¿Seguro que quieres guardar la partida? (s/n)"
 echo "Se sobreescribiran las partidas anteriores que tengan tu mismo nombre."
 read answer
 if [[ $answer == "s" ]]; then
-  if ( ls ./saves/ | grep -q $name); then
+  if ( ls ./saves/ | grep -q "^$name$"); then
     echo ""
   else
     mkdir ./saves/$name 
@@ -19,12 +19,14 @@ if [[ $answer == "s" ]]; then
   echo "current_location_id=$current_location_id" >> ./saves/$name/global_vars.sh
   echo "sp=$sp" >> ./saves/$name/global_vars.sh
   echo "def=$def" >> ./saves/$name/global_vars.sh
+  echo "" >> ./saves/$name/global_vars.sh
+  echo "primera_vez=$primera_vez" >> ./saves/$name/global_vars.sh
 
   echo "${GREEN} Partida Guardada ${WHITE}"
 
 elif [[ $answer == "n" ]];then
-  echo "La partida no se guardo"
+  echo "La partida ${RED}NO${WHITE} se guardo."
 else
-  echo "No entiendo"
+  echo "Por favor responde s/n"
 fi
 }

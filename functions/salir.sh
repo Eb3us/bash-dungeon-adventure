@@ -1,11 +1,27 @@
 salir_del_juego() {
     read salir
     if [[ $salir =~ (s|si) ]]; then
-      exit
+      quiere_guardar_func
     elif [[ $salir =~ (n|no) ]]; then
-      echo "Ya me parecia que no eras taaaaan cobarde"
+      echo "Claro, hijo."
     else 
-      echo "Por favor responde con si o no."
+      echo "Hablá bien."
       salir_del_juego
     fi
+  }
+  quiere_guardar_func() {
+      clear
+      echo "¿Querria le señorite guardar la partida antes de salir? S/N"
+      read quiere_guardar
+      if [[ $quiere_guardar =~ (si|s) ]]; then
+        guardar
+        sleep 1
+        exit
+      elif [[ $quiere_guardar =~ (no|n) ]]; then
+        exit
+      else
+        clear
+        echo "Responda si o no por favor."
+        quiere_guardar_func
+      fi
   }

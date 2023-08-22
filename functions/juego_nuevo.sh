@@ -4,7 +4,7 @@ source ./functions/global_vars.sh
 empezar(){
   echo "¿Como te llamas?"
   read name
-  if (ls ./saves/ | grep -q $name); then
+  if (ls ./saves/ | grep -q "^$name$"); then
     echo "Ese nombre ya esta siendo usado por otro jugador en este dispositivo. Elegi otro."
     empezar 
   else

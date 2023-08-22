@@ -1,14 +1,12 @@
 hp=100
-st=0
+st=1
 int=0
 end=0
 hit_power=10
-def=10
-sp=2
-max_hp=100
+max_hp=105
 global_wall_iterator=1
 current_location_id=1
+sp=1
+def=10
 
-RED=$(tput setaf 197)
-WHITE=$(tput setaf 007)
-
+primera_vez=1

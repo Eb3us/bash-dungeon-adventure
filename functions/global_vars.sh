@@ -12,3 +12,10 @@ current_location_id=1
 RED=$(tput setaf 197)
 WHITE=$(tput setaf 007)
 
+############################
+## Variables por cuarto   ##
+############################
+# Comienzo
+
+primera_vez=1
+

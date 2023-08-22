@@ -6,7 +6,7 @@ echo "Los personajes guardados en el dispositivo son:"
 ls ./saves/
 echo ""
 read answer
-if (ls ./saves/ | grep -q $answer); then 
+if (ls ./saves/ | grep -q "^$answer$"); then 
   name=$answer
   source ./saves/$answer/global_vars.sh
 else

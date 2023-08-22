@@ -1,33 +1,8 @@
-#! /bin/bash
-
-source ./functions/colors.sh
-source ./functions/mirar/mirar.sh
-source ./functions/ayuda.sh
-source ./functions/salir.sh
-source ./functions/guardar.sh
-source ./functions/mirar_alrededor/comienzo.sh
-
-shopt -s nocasematch
-
-echo "Bienvenido a esta aventura!"
-echo ""
-echo "¿Que deseas hacer?"
-echo "1.Comenzar a jugar"
-echo "2.Cargar partida"
-echo "3. Salir"
-read main_menu
-if [[ $main_menu == "1" ]]; then
-  source ./functions/juego_nuevo.sh
-elif [[ $main_menu == "2" ]]; then
-  source ./functions/cargar.sh
-elif [[ $main_menu == "3" ]]; then
-  exit
-else
-  echo "Elige una de las opciones disponibles."
-fi
-
-
 global_cmd() {
+  trap '' INT TSTP
+  room=$1; shift
+  source ./functions/mirar_alrededor/$room.sh
+
   echo ""
   echo 'escribe "ayuda" para una lista de comandos'
   read answer
@@ -47,9 +22,9 @@ global_cmd() {
   elif [[ $answer == "asignar" ]]; then
     source ./functions/asign_sp.sh
   elif [[ $answer == "mirar alrededor" ]]; then
-    mirar_alred_comienzo
+    mirar_alred_$room
   elif [[ $answer == "mirar" ]]; then
-    mirar comienzo
+    mirar $room
   elif [[ $answer == "guardar" ]]; then
     guardar 
   elif [[ $answer == "salir" ]]; then
@@ -58,9 +33,9 @@ global_cmd() {
     salir_del_juego
   else
     clear
-    echo "No puedo descifrar ese comando..."
+    frases=("vacio" "Meditas en ello y te das cuenta de que no tiene ningun sentido" "¿De que rayos estas hablando?" "La vida es demasiado corta como para perderla pensando ese tipo de cosas" "Eso no sirve" "No te entiendo nada" "Mañana te cuento como resultó eso")
+    nr=$[ $RANDOM % 6 + 1 ]
+    echo ${frases[$nr]}
   fi
-  global_cmd
+  global_cmd $room
 }
-global_cmd
-
