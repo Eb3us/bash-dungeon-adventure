@@ -5,7 +5,7 @@ ayuda() {
     "${RED} mirar: ${WHITE} mirar hacia alguna direccion"
     "${RED} mirar alrededor: ${WHITE} ¿de verdad lo preguntas? bueno quizas si debas mirar alrededor si nos sabes ni donde estas parado"
     "${RED} caminar: ${WHITE} caminar hacia alguna direccion"
-    "${RED} agarrar (cosa): ${WHITE} por ej.agarrar alguna cosa por ej. 'agarrar plato de metal' (ten cuidado con lo agarras)"
+    "${RED} agarrar (cosa): ${WHITE} por ej. 'agarrar plato de metal'"
     "${RED} atacar: ${WHITE} atacar a un enemigo"
     "${RED} inventario: ${WHITE} ver inventario "
     "${RED} guardar: ${WHITE} guardar el progreso "
